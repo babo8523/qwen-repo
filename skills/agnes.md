@@ -7,13 +7,22 @@ Ensure you have the following credentials stored in `credentials.yaml` under the
 
 ## Usage
 ### Text generation
-Use the `agnes` model (e.g., `agnes-2.0-flash`, `agens-2.5-pro-alpha`) via the chat/completions endpoint.
+Use the `agnes` model (e.g., `agnes-2.0-flash`, `agnes-2.5-pro-alpha`) via the chat/completions endpoint.
 
 ### Image generation
 Use `agnes-image-2.1-flash` or similar via the images/generations endpoint.
 
 ### Video generation
 Use `agnes-video-v2.0` via appropriate endpoint (if available).
+
+### Displaying the generated image
+The Agnes image generation API returns a JSON with a `url` field pointing to the generated image (e.g., `https://platform-outputs.agnes-ai.space/images/t2i/<hash>.png`). To show the image directly in chat, embed it in Markdown:
+
+```markdown
+![Description of the image](URL)
+```
+
+Replace `URL` with the link from the API response. No authentication is needed for the image URL; it is publicly accessible.
 
 ## Example
 ```bash
